@@ -1,9 +1,9 @@
-.body {
+.main-page {
     font-family: cursive;
     background-color: rgb(131, 194, 173);
     min-height: 100vh;
 }
-.titleContainer{
+.title-container{
     background-color: rgb(194, 248, 227);
     border-radius: 20px;
     padding: 28px 0;
@@ -16,12 +16,12 @@
 }
 
 
-.subtitle {
+.sub-title {
     font-weight: 900;
     font-size: 20px;
 }
 
-.toDoContainer {
+.to-do-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -29,7 +29,7 @@
 }
 
 
-.taskWrapper {
+.task-wrapper {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -49,6 +49,23 @@
     padding: 10px 20px;
     overflow-wrap: break-word;
     box-shadow: 5px 5px 30px rgb(28, 80, 60);
+    
+}
+
+.task.done {
+    background-color: rgb(91, 161, 134);
+    border-radius: 20px;
+    padding: 10px 20px;
+    overflow-wrap: break-word;
+    box-shadow: 5px 5px 30px rgb(28, 80, 60);
+    color: rgb(85, 85, 85);
+}
+
+.task.done h3 {
+    text-decoration: line-through;
+}
+.task.done p {
+    text-decoration: line-through;
 }
 
 .task button {
@@ -58,6 +75,7 @@
     cursor: pointer;
     padding: 0.5rem 1rem;
     border-radius: 5px;
+    border: 1px solid rgb(194, 248, 227);
 }
 
 .task input {
