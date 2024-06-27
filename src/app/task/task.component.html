@@ -1,0 +1,42 @@
+<div class="body">
+    <div class="py-5 container">
+      <div class="row">
+        <div class="titleContainer col text-center">
+          <h1 class="title display-5 fw-bold">To-Do</h1>
+          <p class="subtitle fw-bold">
+            --== In put tasks you want to get done ==--
+          </p>
+        </div>
+        <div class="toDoInput col d-flex flex-column align-items-center justify-content-center">
+          <div class="row mb-2">
+              <div class="col-10">
+                  <h2 class="text-center fw-bolder">Add Tasks Here</h2>
+              </div>
+              <div class="col-2 d-flex flex-column align-items-center justify-content-center">
+                  <button class="btn btn-primary btn-lg" (click)="saveData()">Save</button>
+              </div>
+          </div>
+          <input class="form-control mb-2" name="task" id="task" [(ngModel)]="task" placeholder="Enter task" />
+          <textarea class="form-control mb-2 h-100" name="detail" id="detail" [(ngModel)]="detail" placeholder="Enter detail"></textarea>
+        </div>
+      </div>
+    </div>
+    <div class="toDoContainer"> 
+      <div class="taskWrapper">
+          <div *ngFor="let task of tasks" class="todoItem">
+            <div class="task">
+              <div class="d-flex justify-content-between">
+                  <div class="align-items-center">
+                      <input class="form-check-input" type="checkbox" value="" id="" />
+                      <label class="form-check-label align-items-center px-1" for=""> Complete </label>
+                  </div>
+                  <button (click)="deleteData(task.date)">X</button>
+              </div>
+              <h3 class="text-center">{{ task.task }}</h3>
+              <p>{{ task.detail }}</p>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+  
