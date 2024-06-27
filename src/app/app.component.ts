@@ -17,11 +17,14 @@ export class AppComponent {
   }
 
   saveData(){
-    let date: string = (new Date()).toISOString();
-    let data = {name: this.name,task: this.task, date: date};
-    localStorage.setItem(date,JSON.stringify(data));
-    this.session.push(date);
-    this.loadData();
+    console.log(this.name);
+    if ((this.name != '') && (this.task != '')){
+      let date: string = (new Date()).toISOString();
+      let data = {name: this.name,task: this.task, date: date};
+      localStorage.setItem(date,JSON.stringify(data));
+      this.session.push(date);
+      this.loadData();
+    }
   }
 
   loadData() {

@@ -1,0 +1,50 @@
+.body {
+    font-family: cursive;
+    background-color: rgb(131, 194, 173);
+    min-height: 100vh;
+}
+.titleContainer{
+    background-color: rgb(194, 248, 227);
+    border-radius: 20px;
+    padding: 28px 0;
+    
+}
+.title {
+    font-weight: 900;
+    font-size: 70px;
+
+}
+
+
+.subtitle {
+    font-weight: 900;
+    font-size: 20px;
+}
+
+.toDoContainer {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.taskWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5rem;
+}
+
+.task {
+    background-color: rgb(194, 248, 227);
+    border-radius: 20px;
+    padding: 28px 0;
+    width: 300px;
+    height: 300px;
+}
+
+.todoItem {
+    width: 15rem;
+    height: 20rem;
+    margin: 0.5rem;
+    box-sizing: border-box;
+}
+
