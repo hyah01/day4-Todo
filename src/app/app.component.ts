@@ -7,4 +7,34 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'day4-Todo';
+  name: string = '';
+  task: string = '';
+  session: string[] = [];
+  tasks: any[] = [];
+
+  ngOnInit(){
+    this.loadData();
+  }
+
+  saveData(){
+    let data = {name: this.name,task: this.task};
+    let date: string = (new Date()).toISOString();
+    localStorage.setItem(date,JSON.stringify(data));
+    this.session.push(date);
+    this.loadData();
+  }
+
+  loadData() {
+    this.tasks = [];
+    this.session.forEach((taskKey) => {
+      const task = localStorage.getItem(taskKey);
+      if (task){
+        this.tasks.push(JSON.parse(task));
+      }
+    })
+  }
+
+  
+
+
 }
