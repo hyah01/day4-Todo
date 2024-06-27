@@ -17,8 +17,8 @@ export class AppComponent {
   }
 
   saveData(){
-    let data = {name: this.name,task: this.task};
     let date: string = (new Date()).toISOString();
+    let data = {name: this.name,task: this.task, date: date};
     localStorage.setItem(date,JSON.stringify(data));
     this.session.push(date);
     this.loadData();
@@ -34,7 +34,10 @@ export class AppComponent {
     })
   }
 
-  
+  deleteData(date:string){
+    localStorage.removeItem(date);
+    this.loadData();
+  }
 
 
 }
